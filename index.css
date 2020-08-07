@@ -4,4 +4,7 @@
     background-color: bisque;
     font-size: 30pt;
     color: black;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
