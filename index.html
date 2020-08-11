@@ -6,9 +6,92 @@
     <title>冰璐守恒的个人博客</title>
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
+
 <body>
-    <div id="root">
-        hello world!
+    <!-- 顶部内容 -->
+    <div class="header">
+        <div class="headerLeft">
+            <div class="title">
+                冰露守恒的个人博客
+            </div>
+            <div class="githubSource">
+                GitHub：https://github.com/wenblsh
+            </div>
+        </div>
+        <div class="headerRight">
+            <div>文章</div>
+            <div>笔记</div>
+            <div>生活</div>
+            <div>转载</div>
+        </div>
+    </div>
+    <!-- 中间内容 -->
+    <div class="body">
+        <!-- 个人信息介绍 -->
+        <div class="userMessage">
+            <div class="userMessageHeader">
+                <img class="headerIcon" src="./image/headerIcon.jpg" />
+                <div class="userBaseMessage">
+                    <div class="userBaseMessageName">冰露守恒</div>
+                    <div class="userBaseMessageQQ">QQ:413263123</div>
+                </div>
+            </div>
+            <div class="userMessageBody">
+                90后金牛程序男一枚，喜欢。。。
+            </div>
+        </div>
+        <!-- 博客文章列表 -->
+        <div id="articleBody" class="articleBody">
+
+        </div>
     </div>
 </body>
+<script>
+    var body = document.getElementById("articleBody")
+    var ulObj = document.createElement("ul")
+    var dataSource = []
+    for (let index = 0; index < 20; index++) {
+        let obj = {
+            title: "测试文章标题啊啊啊啊啊啊啊啊啊啊啊" + index,
+            imgSource: "./image/headerIcon.jpg",
+            content: "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容。。。",
+            time: "2020-11-" + index
+        }
+        var liObj = document.createElement("div")
+        liObj.setAttribute("class", "articleContainer")
+
+        var articleHeaderDiv = document.createElement("div")
+        articleHeaderDiv.setAttribute("class", "articleHeaderDiv")
+        liObj.appendChild(articleHeaderDiv)
+
+        var articleHeadeTitlerDiv = document.createElement("div")
+        articleHeadeTitlerDiv.setAttribute("class", "articleHeadeTitlerDiv")
+        articleHeaderDiv.appendChild(articleHeadeTitlerDiv)
+
+        var titleDiv = document.createElement("div")
+        titleDiv.setAttribute("class", "articleTitle")
+        titleDiv.innerHTML = obj.title
+        articleHeadeTitlerDiv.appendChild(titleDiv)
+
+        var contentDiv = document.createElement("div")
+        contentDiv.setAttribute("class", "articleContent")
+        contentDiv.innerHTML = obj.content
+        articleHeadeTitlerDiv.appendChild(contentDiv)
+
+        var timeDiv = document.createElement("div")
+        timeDiv.setAttribute("class", "articleTime")
+        timeDiv.innerHTML = obj.time
+        articleHeadeTitlerDiv.appendChild(timeDiv)
+
+        var imgObj = document.createElement("img")
+        imgObj.setAttribute("class", "articleImg")
+        imgObj.src = obj.imgSource
+        articleHeaderDiv.appendChild(imgObj)
+
+
+        ulObj.appendChild(liObj)
+    }
+    body.appendChild(ulObj)
+    debugger
+</script>
 </html>
